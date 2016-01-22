@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/body.css">
+	
+</head>
+<body>
+	 <div id="loading">
+	    	<div>
+	    		<p></p>
+	    		<span>0%</span>
+	    	</div>
+
+	    </div>
+	<div id="wrap" >
+			<img src="images/game/index_logo.png" class="logo" alt="">
+            <div class="all"> 
+            	<img src="images/game/peo0_head.png" class="peo0_head" alt="">
+			    <img src="images/game/peo0_body.png" class="peo0_body" alt="">
+            </div>
+			<img src="images/game/biao02.png" class="biao02" alt="">
+			<img src="images/game/biao01.png" class="biao01" alt="">
+			<img src="images/game/hand.png"  class="hand" alt="">
+			<img src="images/game/product.png" class="product" alt="">
+		    <span class="time">20.00</span>
+
+			<img src="images/game/guide.png" class="guide" alt="">
+
+			<img src="images/game/chat1.png" class="chat1" alt="">
+			<img src="images/game/chat2.png" class="chat2" alt="">
+		    <img src="images/game/chat3.png" class="chat3" alt="">
+		    <img src="images/game/biao101.png"  class="biao101" alt="">
+		    <img src="images/game/biao102.png" class="biao102" alt="">
+		     <img src="images/game/biao51.png" class="biao51"  alt="">
+		      <img src="images/game/biao52.png" class="biao52"  alt="">
+	  </div>
+
+	 <div id="ret">
+	 	 <img src="images/game/result.png" class="result" alt="">
+	 	 <p><em class="xing">吕绍聪</em>的水润星值为</p>
+	 	  <div class="fen" >
+	 	  	 <img src="images/game/0.png"  alt="">
+	 	  	 <img src="images/game/1.png"  alt="">
+	    </div>
+
+	 	 <img src="images/game/rt_11.png" class="rt_11" alt="">
+	 	 <img src="images/game/rt_12.png" class="rt_12" alt="">
+	 	 <img src="images/game/r_1.png" class="r_1" alt="">
+	 	 <img src="images/game/choujiang.png" class="choujiang" alt="">
+
+	 </div>
+
+	 <div id="get">
+	 	<img src="images/game/text_01.png" class="text_01" alt="">
+	 	<img src="images/game/pro_01.png" class="pro_01"  alt="">
+	 	<img src="images/game/pro_02.png" class="pro_02" alt ="">
+	 	<img src="images/game/pro_03.png" class="pro_03" alt="">
+	 	<img src="images/game/yujing.png" class="yujing" alt="">
+	    <img src="images/game/photo.png" class="photo"  alt="">
+	    <input type="text" class="text">
+
+	    <a href="###"><img src="images/game/tijiao.png" class="tijiao"  alt="">
+	    </a>
+
+	  </div>
+
+	  <div id="sharg">
+	  	  <img src="images/choice/index_logo.png" class="logo" alt="">
+	  	  <img src="images/game/share_text2.png" class="share_text2 animated fadeIn" alt="">
+	  	  <img src="images/game/abc.png" class="abc" alt="">
+	  	  <img src="images/game/to_share.png" class="to_share animated fadeIn" alt="">
+	  	  <img src="images/game/share_text.png" class="share_text" alt="">
+
+	  	  <img src="images/game/share_peo1.png" alt="" class="share_peo1">
+	  	  <img src="images/game/share_peo2.png" alt="" class="share_peo2">
+	  	  <img src="images/game/share_peo3.png" alt="" class="share_peo3">
+	  	  <img src="images/game/share_peo4.png" alt="" class="share_peo4">
+	  	  <img src="images/game/share_peo5.png" alt="" class="share_peo5">
+	  	  <img src="images/game/car.png" class="car" alt="">
+	  	  <img src="images/game/a_couple.png" class="a_couple" alt="">
+
+	  </div>
+	    	
+	   
+</body>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+
+      // var time = document.getElementsByTagName('time')[0];
+	  var w = $(window).width();
+	  var h = $(window).height();
+	  if (w/h>0.6666) {
+		$("#wrap").width($(window).height()*0.66667);
+	};
+ 
+  $hand =$(".hand");
+  $time =$(".time");
+  $head =$(".peo0_head");
+  $text =$(".text");
+
+  $choujiang = $(".choujiang");
+  $tijiao= $(".tijiao");
+//开始隐藏所有图片
+$(".chat1").hide();
+$(".biao51").hide();
+$(".biao52").hide();
+$(".chat2").hide();
+$(".chat3").hide();
+$(".biao101").hide();
+$(".biao01").show();
+$(".biao02").show();
+$(".biao102").hide();
+  
+
+  
+
+
+  $choujiang.on("click",function  () {
+    $("#ret").css("display","none");
+	$("#wrap").css("display","none");
+	$("#get").css("display","block");
+  })
+
+$tijiao.on("click",function  () {
+	$("#ret").css("display","none");
+	$("#wrap").css("display","none");
+	$("#get").css("display","block");
+	if ($text.val()=="") {
+		alert("请输入手机号码");
+		$("#get").css("display","block");
+	}else{
+		$("#ret").css("display","none");
+		$("#wrap").css("display","none");
+		$("#get").css("display","none");
+		$("#sharg").css("display","block");
+	}
+	
+})
+
+$hand.on("touchstart",function  () {
+			index++;
+		  headtime ()
+		$(".product").src="images/game/product.gif";
+			 $hand.hide();
+			 if(startBol==false){
+			 	timeFn ()
+			 	startBol = true;
+			 }
+		  	 
+		  	// headtime ()
+		// alert(index)
+		if(index%2==0){
+			$head.removeClass("wobble1");
+			$head.removeClass("wobble2");
+			setTimeout(function(){
+			$head.addClass("wobble1");
+			},30)
+		}
+		if (index%2!=0){
+			$head.removeClass("wobble1");
+			$head.removeClass("wobble2");
+		setTimeout(function(){
+			$head.addClass("wobble2");
+		},30)
+		}		
+})
+
+
+
+ 
+var startBol = false;
+var index = 0;//头部动画
+  $head.on("touchstart",function  () {
+			index++;
+		  headtime ()
+		$(".product").src="images/game/product.gif";
+			 $hand.hide();
+			 if(startBol==false){
+			 	timeFn ()
+			 	startBol = true;
+			 }
+		  	 
+		  	// headtime ()
+		// alert(index)
+		if(index%2==0){
+			$head.removeClass("wobble1");
+			$head.removeClass("wobble2");
+			setTimeout(function(){
+			$head.addClass("wobble1");
+			},30)
+		}
+		if (index%2!=0){
+			$head.removeClass("wobble1");
+			$head.removeClass("wobble2");
+		setTimeout(function(){
+			$head.addClass("wobble2");
+		},30)
+		}		
+})
+
+//统计分数
+var fs=0;
+var fen = document.getElementsByClassName('fen')[0];
+function headtime () {
+	fs++;
+	// console.log(fs);
+	var str = String(fs);
+		var arr = str.split("");
+		// console.log(arr);
+		fen.innerHTML="";
+		for (var i = 0; i < arr.length; i++) {
+			var img = document.createElement("img");
+			img.src = "images/game/"+arr[i]+".png";
+			fen.appendChild(img);
+		};
+
+}
+
+
+
+	function timeFn () {//倒计时
+		var n = 20;
+		var timer = setInterval(function  () {
+			n -= 0.02;
+			time (n)
+			if (n<0) {
+				clearInterval(timer);
+				n = 0;
+		
+			}
+
+			$time.html(n.toFixed(2));
+		},20)
+		
+	}
+
+function time (t) {//动画随时间显示隐藏
+	
+	if (t<=15) {
+		    
+          	$(".chat1").show();
+          	$(".biao51").show();
+          	$(".biao52").show();
+          	$(".biao01").hide();
+          	$(".biao02").hide();
+          	
+	};
+	if (t<=10) {
+			$(".chat1").hide();
+			$(".biao51").hide();
+			$(".biao52").hide();
+			$(".chat2").show(); 
+			 $(".biao101").show(); 
+			 $(".biao102").show();     	
+	};
+	if (t<=5) {
+		$(".chat3").show();
+	    $(".biao101").hide();
+	    $(".biao102").hide();
+	};
+	if (t<=0) {
+		$("#ret").css("display","block");
+		$("#wrap").css("display","none");
+	};
+
+}
+	
+	//loading
+   var $span = $("#loading").find("span");
+   var $p = $("#loading").find("p");
+  // alert($span)
+   var limg = ["loading.jpg","load_font.png"];
+   var imgs = ["index_logo.png","peo0_head.png","peo0_body.png","biao02.png","biao01.png","hand.png","guide.png","chat1.png","chat2.png","chat3.png","biao101.png","biao102.png","biao51.png","biao52.png"];
+
+
+   
+   var ind = 0;
+  for (var i = 0; i < limg.length; i++) {
+    var img = new Image();
+    img.src = "images/"+limg[i];
+    img.onload = function  () {
+      ind++;
+      if (ind==limg.length) {
+        loading(imgs,function () {
+          $("#loading").hide();
+          $("#wrap").show();
+        })
+      };
+    }
+  };
+  function loading (aimg,fn) {
+  for (var i = 0; i < aimg.length; i++) {
+    var index = 0;
+    var img = new Image();
+    img.src = "images/game/"+aimg[i];
+    img.onload = function  () {
+      index++;
+      var p = parseInt(index/aimg.length*100);
+      $span.html(p+"%");
+      // alert($span.html);
+           $p.css("backgroundPosition","0 -"+parseInt(195*(p/100))+"px");
+      $("#wrap").hide();
+      if (index==aimg.length) {
+        fn && fn();
+      };
+    }
+  };
+}
+  var $head = $(".all").find(".peo0_head");
+  var $hand = $(".hand");
+  var $body = $(".all").find(".peo0_body");
+  var $name =$(".xing");
+
+  // var $name = $(".result_c").find(".name");
+  var indexs = window.location.search.split("=")[1];
+  $head.attr({src:"images/game/peo"+indexs+"_head.png"});
+  $body.attr({src:"images/game/peo"+indexs+"_body.png"});
+  var names = ["吕绍聪","佟梦实","邵明明","袁雨萱","宋妍霏","邢菲","左溢","赵顺然","史文祥","葛洧吟","程星源","高旻睿","万国鹏","张予曦"];
+  $name.text(names[indexs]);
+</script>
+</html>
